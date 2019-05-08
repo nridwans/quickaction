@@ -81,6 +81,10 @@ class PopupWindows {
     return mRootView;
   }
 
+  public boolean isShowing() {
+    return mWindow.isShowing();
+  }
+
   void setOnDismissListener(PopupWindow.OnDismissListener listener) {
     mWindow.setOnDismissListener(listener);
   }
