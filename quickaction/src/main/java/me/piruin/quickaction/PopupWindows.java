@@ -77,6 +77,10 @@ class PopupWindows {
     mWindow.setContentView(root);
   }
 
+  public View getContentView() {
+    return mRootView;
+  }
+
   void setOnDismissListener(PopupWindow.OnDismissListener listener) {
     mWindow.setOnDismissListener(listener);
   }
