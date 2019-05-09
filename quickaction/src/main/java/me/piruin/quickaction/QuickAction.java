@@ -479,7 +479,7 @@ public class QuickAction extends PopupWindows implements OnDismissListener {
 
     setAnimationStyle(screenWidth, anchorRect.centerX(), onTop);
 
-    mWindow.showAtLocation(anchor, Gravity.NO_GRAVITY, xPos, yPos);
+    showAtLocation(anchor, Gravity.NO_GRAVITY, xPos, yPos);
   }
 
   /**
@@ -516,14 +516,14 @@ public class QuickAction extends PopupWindows implements OnDismissListener {
     switch (animation) {
       case AUTO:
         if (arrowPos <= screenWidth/4)
-          mWindow.setAnimationStyle(Animation.GROW_FROM_LEFT.get(onTop));
+          setAnimationStyle(Animation.GROW_FROM_LEFT.get(onTop));
         else if (arrowPos > screenWidth/4 && arrowPos < 3*(screenWidth/4))
-          mWindow.setAnimationStyle(Animation.GROW_FROM_CENTER.get(onTop));
+          setAnimationStyle(Animation.GROW_FROM_CENTER.get(onTop));
         else
-          mWindow.setAnimationStyle(Animation.GROW_FROM_RIGHT.get(onTop));
+          setAnimationStyle(Animation.GROW_FROM_RIGHT.get(onTop));
         break;
       default:
-        mWindow.setAnimationStyle(animation.get(onTop));
+        setAnimationStyle(animation.get(onTop));
     }
   }
 

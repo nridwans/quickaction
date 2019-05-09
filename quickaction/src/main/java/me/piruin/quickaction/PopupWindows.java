@@ -28,9 +28,11 @@ import android.view.WindowManager;
 import android.widget.PopupWindow;
 
 class PopupWindows extends PopupWindow {
+  private Context mContext;
 
   PopupWindows(Context context) {
     super(context);
+    mContext = context;
     setTouchInterceptor(new View.OnTouchListener() {
       @Override public boolean onTouch(View view, MotionEvent event) {
         if (event.getAction() == MotionEvent.ACTION_OUTSIDE) {
@@ -53,6 +55,10 @@ class PopupWindows extends PopupWindow {
     setFocusable(true);
     setOutsideTouchable(true);
     setShadows();
+  }
+
+  public Context getContext() {
+    return mContext;
   }
 
   @TargetApi(Build.VERSION_CODES.LOLLIPOP) private void setShadows() {
